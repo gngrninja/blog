@@ -1,0 +1,17 @@
+[Unit]
+Description=PyBot
+After=syslog.target
+After=network.target
+After=memcached.service redis.service
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/pybot
+ExecStart=/usr/bin/python3 /home/pi/pybot/bot.py
+Restart=always
+Environment=USER=pi HOME=/home/pi
+
+[Install]
+WantedBy=multi-user.target

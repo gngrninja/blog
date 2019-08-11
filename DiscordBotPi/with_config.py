@@ -23,12 +23,12 @@ async def on_ready():
     print('------')
 
 @bot.command()
-async def roll(dice: str):
+async def roll(ctx, dice: str):
     """Rolls a dice in NdN format."""
     try:
         rolls, limit = map(int, dice.split('d'))
     except Exception:
-        await bot.say('Format has to be in NdN!')
+        await ctx.send('Format has to be in NdN!')
         return
 
     total = 0
@@ -37,10 +37,10 @@ async def roll(dice: str):
     for r in result.split(','):
         total += int(r.strip())
 
-    await bot.say("__Your results for **" + str(rolls) + "** D**" + str(limit) + "**__\n" + ":game_die: " +  result + "\nTotal [**" + str(total) +  "**]")
+    await ctx.send("__Your results for **" + str(rolls) + "** D**" + str(limit) + "**__\n" + ":game_die: " +  result + "\nTotal [**" + str(total) +  "**]")
 
 @bot.command()
-async def testembed():
+async def testembed(ctx):
     """embed tester!"""
     message = "This is only a test!"
     title = "Embed title!"
@@ -48,9 +48,8 @@ async def testembed():
     embed.description = message
     embed.title = title
     embed.colour = 0xDEADBF
-    await bot.say(embed=embed)
-
-
+    await ctx.send(embed=embed)
+    
 if __name__ == '__main__':
     print('we are in main!')
     bot.run(TOKEN)    

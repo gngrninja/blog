@@ -18,14 +18,14 @@ async def on_ready():
 @has_permissions(kick_members=True)
 async def kick(ctx, member: discord.User=None):
     """ Simple kick command """
-    await bot.kick(member)
+    await ctx.guild.kick(member)
     print("kicked" + " " + str(member))
 
 @bot.command(pass_context=True)
 @has_permissions(ban_members=True)
 async def ban(ctx, member: discord.User=None):
     """ Simple ban command """
-    await bot.ban(member)
+    await ctx.guild.ban(member)
     print("banned" + " " + str(member))
 
 if __name__ == '__main__':

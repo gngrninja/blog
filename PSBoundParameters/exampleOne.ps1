@@ -15,7 +15,7 @@ function Get-PSBoundParameters {
     )
 
     begin {
-        
+
     }
 
     process {
@@ -30,5 +30,3 @@ function Get-PSBoundParameters {
 }
 
 $params = Get-PSBoundParameters -ParamOne 'testOne' -ParamTwo 'testTwo'
-
-return $params

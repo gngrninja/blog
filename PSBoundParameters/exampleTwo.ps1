@@ -76,6 +76,7 @@ Invoke-PSBoundParametersAction -ParamTwo 'value'
 
 #test with ParamOne and ParamTwo
 Invoke-PSBoundParametersAction -ParamOne 'value' -ParamTwo 'value'
+
 #test with ParamThree
 Invoke-PSBoundParametersAction -ParamThree 'value'
 

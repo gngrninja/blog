@@ -55,7 +55,7 @@ async def sayuser(ctx):
     """get user name"""
     user = ctx.message.author
     await ctx.send("mention: " + user.mention + " name: " + user.name)    
-    
+
 if __name__ == '__main__':
     print('we are in main!')
     bot.run(TOKEN)    
